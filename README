@@ -7,11 +7,14 @@
 
 from admob import Admob
 
+"""
+	Before starting to use the API you need to generate an AdMob API Token.
+"""
 admob = Admob('API KEY')
 token = admob.login(email='Email', password='API Password')
 
 """
-Get Token
+Get and Set Token
 """
 if len(token['errors']) == 0:
   admob.token = token['data']['token']

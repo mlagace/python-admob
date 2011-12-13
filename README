@@ -1,0 +1,78 @@
+To use the AdMob API you must enable API read only access to your account on the AdMob Account Information page.
+Once API access is granted, you will be given an AdMob API password. This is the password you'll use to login with the client.
+You must generate an AdMob client_key that you will use to access the AdMob API. This can be done on the AdMob API Beta page.
+
+Examples on how to use the python-admob module:
+
+from admob import Admob
+
+admob = Admob('API KEY')
+token = admob.login(email='Email', password='API Password')
+
+"""
+Get Token
+"""
+if len(token['errors']) == 0:
+	admob.token = token['data']['token']
+else:
+	print token['errors']
+
+"""
+Get all sites and stats
+"""
+sites = admob.search('site')
+if len(sites['errors']) == 0:
+	print sites['data']
+else:
+	print sites['errors']
+
+stats = admob.getstats(sites['data'][0]['id'], 'site', {'start_date':'2011-12-11','object_dimension':'site', 'time_dimension':'day', 'order_by[impressions]':'desc'})
+if len(stats['errors']) == 0:
+	print stats['data']
+else:
+	print stats['errors']
+
+"""
+Get all ads and stats
+"""
+ads = admob.search('ad')
+if len(ads['errors']) == 0:
+	print ads['data']
+else:
+	print ads['errors']
+
+stats = admob.getstats('ad_id', 'ad')
+if len(stats['errors']) == 0:
+	print stats['data']
+else:
+	print stats['errors']
+
+"""
+Get all adgroups and stats
+"""
+adgroups = admob.search('adgroup')
+if len(adgroups['errors']) == 0:
+	print adgroups['data']
+else:
+	print adgroups['errors']
+
+stats = admob.getstats('ad_group_id', 'adgroup')
+if len(stats['errors']) == 0:
+	print stats['data']
+else:
+	print stats['errors']
+
+"""
+Get all campaigns and stats
+"""
+campaigns = admob.search('campaign')
+if len(campaigns['errors']) == 0:
+	print campaigns['data']
+else:
+	print campaigns['errors']
+
+stats = admob.getstats('campaign_id', 'campaign')
+if len(stats['errors']) == 0:
+	print stats['data']
+else:
+	print stats['errors']

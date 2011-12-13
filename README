@@ -1,9 +1,9 @@
-To use the AdMob API you must enable API read only access to your account on the AdMob Account Information page.
-Once API access is granted, you will be given an AdMob API password. This is the password you'll use to login with the client.
-You must generate an AdMob client_key that you will use to access the AdMob API. This can be done on the AdMob API Beta page.
+# To use the AdMob API you must enable API read only access to your account on the AdMob Account Information page.
+# Once API access is granted, you will be given an AdMob API password. This is the password you'll use to login with the client.
+# You must generate an AdMob client_key that you will use to access the AdMob API. This can be done on the AdMob API Beta page.
 
 
-Examples on how to use the python-admob module:
+**Examples on how to use the python-admob module:**
 
 from admob import Admob
 

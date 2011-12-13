@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module admob</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>admob</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="http://pypi.python.org/pypi/python-admob/1.0.0">python-admob-1.0.0</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="cjson.html">cjson</a><br>
+</td><td width="25%" valign=top><a href="urllib.html">urllib</a><br>
+</td><td width="25%" valign=top><a href="urllib2.html">urllib2</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="admob.html#Admob">Admob</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Admob">class <strong>Admob</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>To&nbsp;use&nbsp;the&nbsp;AdMob&nbsp;API&nbsp;you&nbsp;must&nbsp;enable&nbsp;API&nbsp;read&nbsp;only&nbsp;access&nbsp;to&nbsp;your&nbsp;account&nbsp;on&nbsp;the&nbsp;AdMob&nbsp;Account&nbsp;Information&nbsp;page.<br>
+Once&nbsp;API&nbsp;access&nbsp;is&nbsp;granted,&nbsp;you&nbsp;will&nbsp;be&nbsp;given&nbsp;an&nbsp;AdMob&nbsp;API&nbsp;password.&nbsp;This&nbsp;is&nbsp;the&nbsp;password&nbsp;you'll&nbsp;use&nbsp;to&nbsp;login&nbsp;with&nbsp;the&nbsp;client.<br>
+You&nbsp;must&nbsp;generate&nbsp;an&nbsp;AdMob&nbsp;client_key&nbsp;that&nbsp;you&nbsp;will&nbsp;use&nbsp;to&nbsp;access&nbsp;the&nbsp;AdMob&nbsp;API.&nbsp;This&nbsp;can&nbsp;be&nbsp;done&nbsp;on&nbsp;the&nbsp;AdMob&nbsp;API&nbsp;Beta&nbsp;page.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Admob-__init__"><strong>__init__</strong></a>(self, client_key, api_url<font color="#909090">='https://api.admob.com/v2/'</font>)</dt></dl>
+
+<dl><dt><a name="Admob-getstats"><strong>getstats</strong></a>(self, stat_type_id, stat_type, stat_data<font color="#909090">={}</font>)</dt><dd><tt>Get&nbsp;stats&nbsp;for&nbsp;ads,&nbsp;campaigns,&nbsp;and&nbsp;sites.<br>
+stat_type_id&nbsp;is&nbsp;the&nbsp;"id"&nbsp;field&nbsp;you&nbsp;received&nbsp;in&nbsp;the&nbsp;search&nbsp;results.<br>
+stat_type&nbsp;options:&nbsp;ad,&nbsp;site,&nbsp;campaign<br>
+stat_data&nbsp;contains&nbsp;optional&nbsp;parameters&nbsp;you&nbsp;can&nbsp;send&nbsp;to&nbsp;the&nbsp;AdMob&nbsp;API&nbsp;to&nbsp;filter&nbsp;stats.<br>
+You&nbsp;can&nbsp;view&nbsp;these&nbsp;optional&nbsp;params&nbsp;at:&nbsp;<a href="http://developer.admob.com/wiki/API">http://developer.admob.com/wiki/API</a>&nbsp;on&nbsp;any&nbsp;Stats&nbsp;link.<br>
+If&nbsp;no&nbsp;start_date&nbsp;or&nbsp;end_date&nbsp;is&nbsp;given,&nbsp;they&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;the&nbsp;current&nbsp;date.</tt></dd></dl>
+
+<dl><dt><a name="Admob-login"><strong>login</strong></a>(self, endpoint<font color="#909090">='auth/login'</font>, **login_params)</dt><dd><tt>You&nbsp;need&nbsp;to&nbsp;specify&nbsp;your&nbsp;email&nbsp;and&nbsp;AdMob&nbsp;API&nbsp;password&nbsp;in&nbsp;the&nbsp;login_params,&nbsp;to&nbsp;be&nbsp;able&nbsp;to&nbsp;login&nbsp;on&nbsp;the&nbsp;AdMob&nbsp;API.<br>
+You&nbsp;will&nbsp;receive&nbsp;a&nbsp;response&nbsp;containing&nbsp;the&nbsp;token&nbsp;data&nbsp;you'll&nbsp;need&nbsp;to&nbsp;use&nbsp;the&nbsp;AdMob&nbsp;API&nbsp;after&nbsp;you're&nbsp;logged&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="Admob-logout"><strong>logout</strong></a>(self, endpoint<font color="#909090">='auth/logout'</font>)</dt><dd><tt>You&nbsp;must&nbsp;logout&nbsp;when&nbsp;you&nbsp;are&nbsp;done&nbsp;using&nbsp;the&nbsp;AdMob&nbsp;API.&nbsp;This&nbsp;method&nbsp;hits&nbsp;the&nbsp;logout&nbsp;method&nbsp;with&nbsp;your&nbsp;client_key<br>
+and&nbsp;token&nbsp;you&nbsp;generated&nbsp;during&nbsp;login&nbsp;to&nbsp;destroy&nbsp;current&nbsp;token.</tt></dd></dl>
+
+<dl><dt><a name="Admob-search"><strong>search</strong></a>(self, search_type, include_deleted<font color="#909090">=False</font>)</dt><dd><tt>Search&nbsp;for&nbsp;all&nbsp;ads,&nbsp;campaigns,&nbsp;and&nbsp;sites.&nbsp;The&nbsp;search_type&nbsp;parameter&nbsp;determines&nbsp;what&nbsp;you&nbsp;are&nbsp;searching&nbsp;for.<br>
+search_type&nbsp;options:&nbsp;ad,&nbsp;site,&nbsp;campaign<br>
+The&nbsp;include_deleted&nbsp;parameter&nbsp;determines&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;include&nbsp;deleted&nbsp;ads,&nbsp;sites,&nbsp;or&nbsp;campaigns.</tt></dd></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
